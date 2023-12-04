@@ -1,0 +1,2 @@
+import documents_for_titanic
+documents_for_titanic.use_mode()
