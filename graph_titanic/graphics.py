@@ -26,6 +26,7 @@ def graphics_use_for_var_one_var(a):
         sns.violinplot(a)
 
 
+
 def graphics_use_for_vars(a, b):
     """
 

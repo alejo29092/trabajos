@@ -5,6 +5,7 @@ here I did tests to know what to use
 import pandas as pd
 import matplotlib.pyplot as plt
 import graphics
+import seaborn as sns
 
 df = pd.read_csv("C:/Users/alejo/Desktop/pythonProject5/tested.csv")
 # print(f'rows: {df.shape}')
@@ -172,6 +173,13 @@ def use_mode(df):
 
         if pre_graphic == '2':
             graphics.graphics_use_for_2_vars()
+        else:
+            plt.figure(figsize=(10, 6))
+            sns.catplot(x='Survived', y='Age', data=df, kind='swarm', alpha=0.7, palette={0: 'red', 1: 'blue'})
+            plt.title('Swarm Plot: Age vs. Survivors')
+            plt.xlabel('Survivors (0: Not, 1: Yes)')
+            plt.ylabel('Age')
+            plt.show()
 
 
 # 'PassengerId','Survived','Pclass','Age','SibSp','Parch','Ticket','Fare'
@@ -198,4 +206,3 @@ not_funtional()
 def data_boxplot():
     cols_num = ['PassengerId', 'Survived', 'Pclass', 'Age', 'SibSp', 'Parch', 'Ticket', 'Fare']
     fig, ax = plt.subplot(nrow=7, ncpls=1, figsize=(8, 30))
-
